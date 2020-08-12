@@ -146,9 +146,7 @@ public:
 
   static bool used_by(std::filesystem::path const& path) noexcept {
     HANDLE const handle =
-      CreateFileW(path.c_str(), GENERIC_READ | GENERIC_WRITE,
-        FILE_SHARE_READ | FILE_SHARE_WRITE,
-        nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+      CreateFileW(path.c_str(), GENERIC_READ, 0, nullptr, OPEN_EXISTING, 0, nullptr);
     if (handle == INVALID_HANDLE_VALUE)
       return true;
     CloseHandle(handle);
@@ -345,4 +343,4 @@ private:
 }; // file
 
   
-} // cellarium
+} //

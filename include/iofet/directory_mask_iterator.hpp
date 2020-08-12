@@ -174,7 +174,7 @@ namespace iofet {
   }
   
   
-  directory_mask_iterator end(directory_mask_iterator const& iter) noexcept {
+  directory_mask_iterator end(directory_mask_iterator const&) noexcept {
     return directory_mask_iterator{};
   }
   
